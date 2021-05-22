@@ -1,10 +1,12 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@frenchkiss-libs/sdk'
 
 // @frenchkiss-libs/sdk v^1.0.4
-export const ROUTER_ADDRESS_TESTNET = '0x221c18984120e95f8d887c53F8b8aa066BE05c94' 
+export const ROUTER_ADDRESS_TESTNET = '0x221c18984120e95f8d887c53F8b8aa066BE05c94'
 
 // @frnchkisslibs/sdk v>1.0.5
-export const ROUTER_ADDRESS = '0x221c18984120e95f8d887c53F8b8aa066BE05c94' 
+export const ROUTER_ADDRESS_MAINNET = '0x17760209bafeaDBc12C44DB421Ce611FD43B9Ed0' 
+
+export const ROUTER_ADDRESS = process.env.REACT_APP_CHAIN_ID === "97" ? ROUTER_ADDRESS_TESTNET : ROUTER_ADDRESS_MAINNET 
 
 // a list of tokens by chain
 type ChainTokenList = {
@@ -13,17 +15,17 @@ type ChainTokenList = {
 
 export const KISS_TESTNET = new Token(
   ChainId.BSCTESTNET,
-  '0x613b3474517a91ca9667e0c9a84d0611808dc398',
+  '0xf0eFE90D5405EBE9595ad26BA6C1E881ad4e87bF',
   18,
   'KISS',
-  'FrenchKiss Finance Token'
+  'FrenchKiss Token'
 )
 export const KISS = new Token(
   ChainId.MAINNET,
-  '0x0000000000000000000000000000000000000000',
+  '0x3b44b0cFe3a290906F3C6479df56457db9d7cd59',
   18,
   'KISS',
-  'FrenchKiss Finance Token'
+  'FrenchKiss Token'
 )
 
 export const WBNB = new Token(ChainId.MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WBNB', 'Wrapped BNB')

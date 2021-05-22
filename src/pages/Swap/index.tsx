@@ -33,14 +33,12 @@ import { LinkStyledButton } from 'components/Shared'
 import { maxAmountSpend } from 'utils/maxAmountSpend'
 import { computeTradePriceBreakdown, warningSeverity } from 'utils/prices'
 import Loader from 'components/Loader'
-import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import AppBody from '../AppBody'
 
 const Swap = () => {
   const loadedUrlParams = useDefaultsFromURLSearch()
-  const TranslateString = useI18n()
 
   // token warning stuff
   const [loadedInputCurrency, loadedOutputCurrency] = [
@@ -92,13 +90,13 @@ const Swap = () => {
 
   const parsedAmounts = showWrap
     ? {
-        [Field.INPUT]: parsedAmount,
-        [Field.OUTPUT]: parsedAmount,
-      }
+      [Field.INPUT]: parsedAmount,
+      [Field.OUTPUT]: parsedAmount,
+    }
     : {
-        [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
-        [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
-      }
+      [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
+      [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
+    }
 
   const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers()
   const isValid = !swapInputError
@@ -303,16 +301,16 @@ const Swap = () => {
             onDismiss={handleConfirmDismiss}
           />
           <PageHeader
-            title={TranslateString(8, 'Exchange')}
-            description={TranslateString(1192, 'Trade tokens in an instant')}
+            title="Exchange"
+            description="Trade tokens in an instant"
           />
           <CardBody>
             <AutoColumn gap="md">
               <CurrencyInputPanel
                 label={
                   independentField === Field.OUTPUT && !showWrap && trade
-                    ? TranslateString(194, 'From (estimated)')
-                    : TranslateString(76, 'From')
+                    ? 'From (estimated)'
+                    : 'From'
                 }
                 value={formattedAmounts[Field.INPUT]}
                 showMaxButton={!atMaxAmountInput}
@@ -350,8 +348,8 @@ const Swap = () => {
                 onUserInput={handleTypeOutput}
                 label={
                   independentField === Field.INPUT && !showWrap && trade
-                    ? TranslateString(196, 'To (estimated)')
-                    : TranslateString(80, 'To')
+                    ? 'To (estimated)'
+                    : 'To'
                 }
                 showMaxButton={false}
                 currency={currencies[Field.OUTPUT]}
@@ -379,7 +377,7 @@ const Swap = () => {
                   <AutoColumn gap="4px">
                     {Boolean(trade) && (
                       <RowBetween align="center">
-                        <Text fontSize="14px">{TranslateString(1182, 'Price')}</Text>
+                        <Text fontSize="14px">Price</Text>
                         <TradePrice
                           price={trade?.executionPrice}
                           showInverted={showInverted}
@@ -389,7 +387,7 @@ const Swap = () => {
                     )}
                     {allowedSlippage !== INITIAL_ALLOWED_SLIPPAGE && (
                       <RowBetween align="center">
-                        <Text fontSize="14px">{TranslateString(88, 'Slippage Tolerance')}</Text>
+                        <Text fontSize="14px">Slippage Tolerance</Text>
                         <Text fontSize="14px">{allowedSlippage / 100}%</Text>
                       </RowBetween>
                     )}
@@ -407,7 +405,7 @@ const Swap = () => {
                 </Button>
               ) : noRoute && userHasSpecifiedInputOutput ? (
                 <GreyCard style={{ textAlign: 'center' }}>
-                  <Text mb="4px">{TranslateString(1194, 'Insufficient liquidity for this trade.')}</Text>
+                  <Text mb="4px">Insufficient liquidity for this trade.</Text>
                 </GreyCard>
               ) : showApproveFlow ? (
                 <RowBetween>

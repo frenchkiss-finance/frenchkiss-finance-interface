@@ -41,10 +41,6 @@ Or, to run Cypress with its GUI
 yarn cypress open
 ```
 
-## Localisation
-
-_In order for the Crowdin API queries to work - you will need `REACT_APP_CROWDIN_APIKEY` & `REACT_APP_CROWDIN_PROJECTID` env variables set in your root `.env.development.local` file_
-
 ### Adding translations
 
 A hook expose the function you need to translate content.

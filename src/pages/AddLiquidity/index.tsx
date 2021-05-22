@@ -30,7 +30,6 @@ import { currencyId } from 'utils/currencyId'
 import Pane from 'components/Pane'
 import Container from 'components/Container'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import useI18n from 'hooks/useI18n'
 import AppBody from '../AppBody'
 import { Dots, Wrapper } from '../Pool/styleds'
 import { ConfirmAddModalBottom } from './ConfirmAddModalBottom'
@@ -46,12 +45,11 @@ export default function AddLiquidity({
   const { account, chainId, library } = useActiveWeb3React()
   const currencyA = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
-  const TranslateString = useI18n()
 
   const oneCurrencyIsWBNB = Boolean(
     chainId &&
-      ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
-        (currencyB && currencyEquals(currencyB, WETH[chainId])))
+    ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
+      (currencyB && currencyEquals(currencyB, WETH[chainId])))
   )
   const expertMode = useIsExpertMode()
 
@@ -176,9 +174,8 @@ export default function AddLiquidity({
           setAttemptingTxn(false)
 
           addTransaction(response, {
-            summary: `Add ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(3)} ${
-              currencies[Field.CURRENCY_A]?.symbol
-            } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currencies[Field.CURRENCY_B]?.symbol}`,
+            summary: `Add ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(3)} ${currencies[Field.CURRENCY_A]?.symbol
+              } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currencies[Field.CURRENCY_B]?.symbol}`,
           })
 
           setTxHash(response.hash)
@@ -227,9 +224,8 @@ export default function AddLiquidity({
           </UIKitText>
         </Row>
         <UIKitText small textAlign="left" padding="8px 0 0 0 " style={{ fontStyle: 'italic' }}>
-          {`Output is estimated. If the price changes by more than ${
-            allowedSlippage / 100
-          }% your transaction will revert.`}
+          {`Output is estimated. If the price changes by more than ${allowedSlippage / 100
+            }% your transaction will revert.`}
         </UIKitText>
       </AutoColumn>
     )
@@ -248,9 +244,8 @@ export default function AddLiquidity({
     )
   }
 
-  const pendingText = `Supplying ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)} ${
-    currencies[Field.CURRENCY_A]?.symbol
-  } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)} ${currencies[Field.CURRENCY_B]?.symbol}`
+  const pendingText = `Supplying ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)} ${currencies[Field.CURRENCY_A]?.symbol
+    } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)} ${currencies[Field.CURRENCY_B]?.symbol}`
 
   const handleCurrencyASelect = useCallback(
     (currA: Currency) => {
@@ -303,8 +298,8 @@ export default function AddLiquidity({
               <ConfirmationModalContent
                 title={
                   noLiquidity
-                    ? TranslateString(1154, 'You are creating a pool')
-                    : TranslateString(1156, 'You will receive')
+                    ? 'You are creating a pool'
+                    : 'You will receive'
                 }
                 onDismiss={handleDismissConfirmation}
                 topContent={modalHeader}
@@ -319,12 +314,12 @@ export default function AddLiquidity({
                 <ColumnCenter>
                   <Pane>
                     <AutoColumn gap="12px">
-                      <UIKitText>{TranslateString(1158, 'You are the first liquidity provider.')}</UIKitText>
+                      <UIKitText>You are the first liquidity provider.</UIKitText>
                       <UIKitText>
-                        {TranslateString(1160, 'The ratio of tokens you add will set the price of this pool.')}
+                        The ratio of tokens you add will set the price of this pool.
                       </UIKitText>
                       <UIKitText>
-                        {TranslateString(1162, 'Once you are happy with the rate click supply to review.')}
+                        Once you are happy with the rate click supply to review.
                       </UIKitText>
                     </AutoColumn>
                   </Pane>
@@ -366,8 +361,8 @@ export default function AddLiquidity({
                     mb="2px"
                   >
                     {noLiquidity
-                      ? TranslateString(1164, 'Initial prices and pool share')
-                      : TranslateString(1166, 'Prices and pool share')}
+                      ? 'Initial prices and pool share'
+                      : 'Prices and pool share'}
                   </UIKitText>
                   <Pane>
                     <PoolPriceBar
