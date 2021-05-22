@@ -1,4 +1,4 @@
-# Contributing to the FrenchKiss ecosystem 🥞
+# Contributing to the FrenchKiss ecosystem 💋
 
 Thanks for taking the time to contribute !
 You can start by reading our [Contribution guidelines](https://docs.frenchkiss.finance/code/contributing) first.
