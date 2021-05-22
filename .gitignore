@@ -33,6 +33,4 @@ cypress/videos
 cypress/screenshots
 cypress/fixtures/example.json
 
-/src/constants/token/pancakeswap.json
-
 .eslintcache
