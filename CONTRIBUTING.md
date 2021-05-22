@@ -40,26 +40,3 @@ Or, to run Cypress with its GUI
 ```js
 yarn cypress open
 ```
-
-### Adding translations
-
-A hook expose the function you need to translate content.
-
-```
-import useI18n from 'hooks/useI18n'
-...
-const TranslateString = useI18n()
-...
-TranslateString(id, 'fallback')
-```
-
-- **id** is the crowdin id of the string you want to translate.
-- **fallback** is a string fallback used if the id cannot be found.
-
-### Variables
-
-The translation component can handle variables being passed in from Crowdin, with no code changes.
-
-It will only work if there is only **one** variable passed in, and if that variable within Crowdin is wrapped in **%** signs, i.e.:
-
-Translation in crowdin: `%asset% Earned` [link](https://crowdin.com/translate/pancakeswap/8/en-de#330)

@@ -3,7 +3,6 @@ import { Currency, Pair } from '@frenchkiss-libs/sdk'
 import { Button, ChevronDownIcon, Text } from '@frenchkiss-libs/uikit'
 import styled from 'styled-components'
 import { darken } from 'polished'
-import useI18n from 'hooks/useI18n'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
 import CurrencySearchModal from '../SearchModal/CurrencySearchModal'
 import CurrencyLogo from '../CurrencyLogo'
@@ -102,8 +101,7 @@ export default function CurrencyInputPanel({
   const [modalOpen, setModalOpen] = useState(false)
   const { account } = useActiveWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
-  const TranslateString = useI18n()
-  const translatedLabel = label || TranslateString(132, 'Input')
+  const translatedLabel = label || 'Input'
   const handleDismissSearch = useCallback(() => {
     setModalOpen(false)
   }, [setModalOpen])
@@ -164,10 +162,10 @@ export default function CurrencyInputPanel({
                 <Text id="pair">
                   {(currency && currency.symbol && currency.symbol.length > 20
                     ? `${currency.symbol.slice(0, 4)}...${currency.symbol.slice(
-                        currency.symbol.length - 5,
-                        currency.symbol.length
-                      )}`
-                    : currency?.symbol) || TranslateString(1196, 'Select a currency')}
+                      currency.symbol.length - 5,
+                      currency.symbol.length
+                    )}`
+                    : currency?.symbol) || 'Select a currency'}
                 </Text>
               )}
               {!disableCurrencySelect && <ChevronDownIcon />}

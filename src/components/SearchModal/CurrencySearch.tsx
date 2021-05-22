@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next'
 import { FixedSizeList } from 'react-window'
 import { ThemeContext } from 'styled-components'
 import AutoSizer from 'react-virtualized-auto-sizer'
-import useI18n from 'hooks/useI18n'
 import { useActiveWeb3React } from '../../hooks'
 import { AppState } from '../../state'
 import { useAllTokens, useToken } from '../../hooks/Tokens'
@@ -136,18 +135,14 @@ export function CurrencySearch({
   )
 
   const selectedListInfo = useSelectedListInfo()
-  const TranslateString = useI18n()
   return (
     <Column style={{ width: '100%', flex: '1 1' }}>
       <PaddedColumn gap="14px">
         <RowBetween>
           <Text>
-            {TranslateString(82, 'Select a token')}
+            Select a token
             <QuestionHelper
-              text={TranslateString(
-                128,
-                'Find a token by searching for its name or symbol or by pasting its address below.'
-              )}
+              text='Find a token by searching for its name or symbol or by pasting its address below.'
             />
           </Text>
           <CloseIcon onClick={onDismiss} />
@@ -165,7 +160,7 @@ export function CurrencySearch({
           <CommonBases chainId={chainId} onSelect={handleCurrencySelect} selectedCurrency={selectedCurrency} />
         )}
         <RowBetween>
-          <Text fontSize="14px">{TranslateString(126, 'Token name')}</Text>
+          <Text fontSize="14px">Token name</Text>
           <SortButton ascending={invertSearchOrder} toggleSortOrder={() => setInvertSearchOrder((iso) => !iso)} />
         </RowBetween>
       </PaddedColumn>
@@ -210,7 +205,7 @@ export function CurrencySearch({
                 onClick={onChangeList}
                 id="currency-search-change-list-button"
               >
-                {selectedListInfo.current ? TranslateString(180, 'Change') : TranslateString(1152, 'Select a list')}
+                {selectedListInfo.current ? 'Change' : 'Select a list'}
               </LinkStyledButton>
             </RowBetween>
           </Card>

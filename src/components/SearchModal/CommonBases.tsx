@@ -3,7 +3,6 @@ import { Text } from '@frenchkiss-libs/uikit'
 import { ChainId, Currency, currencyEquals, ETHER, Token } from '@frenchkiss-libs/sdk'
 import styled from 'styled-components'
 
-import useI18n from 'hooks/useI18n'
 import { SUGGESTED_BASES } from '../../constants'
 import { AutoColumn } from '../Column'
 import QuestionHelper from '../QuestionHelper'
@@ -35,12 +34,11 @@ export default function CommonBases({
   selectedCurrency?: Currency | null
   onSelect: (currency: Currency) => void
 }) {
-  const TranslateString = useI18n()
   return (
     <AutoColumn gap="md">
       <AutoRow>
         <Text fontSize="14px">Common bases</Text>
-        <QuestionHelper text={TranslateString(1204, 'These tokens are commonly paired with other tokens.')} />
+        <QuestionHelper text='These tokens are commonly paired with other tokens.' />
       </AutoRow>
       <AutoRow gap="4px">
         <BaseWrapper

@@ -73,12 +73,9 @@ const SlippageToleranceSettings = () => {
   return (
     <Box mb="16px">
       <Flex alignItems="center" mb="8px">
-        <Text bold>{translateString(88, 'Slippage tolerance')}</Text>
+        <Text bold>Slippage tolerance</Text>
         <QuestionHelper
-          text={translateString(
-            186,
-            'Your transaction will revert if the price changes unfavorably by more than this percentage.'
-          )}
+          text='Your transaction will revert if the price changes unfavorably by more than this percentage.'
         />
       </Flex>
       <Options>

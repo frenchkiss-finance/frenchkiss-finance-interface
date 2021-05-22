@@ -10,7 +10,6 @@ import { RouteComponentProps } from 'react-router'
 
 import { BigNumber } from '@ethersproject/bignumber'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import useI18n from 'hooks/useI18n'
 import { AutoColumn, ColumnCenter } from '../../components/Column'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../components/TransactionConfirmationModal'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
@@ -61,7 +60,6 @@ export default function RemoveLiquidity({
 }: RouteComponentProps<{ currencyIdA: string; currencyIdB: string }>) {
   const [currencyA, currencyB] = [useCurrency(currencyIdA) ?? undefined, useCurrency(currencyIdB) ?? undefined]
   const { account, chainId, library } = useActiveWeb3React()
-  const TranslateString = useI18n()
   const [tokenA, tokenB] = useMemo(() => [wrappedCurrency(currencyA, chainId), wrappedCurrency(currencyB, chainId)], [
     currencyA,
     currencyB,
@@ -368,7 +366,7 @@ export default function RemoveLiquidity({
         {pair && (
           <>
             <RowBetween>
-              <Text color="textSubtle">{TranslateString(1182, 'Price')}</Text>
+              <Text color="textSubtle">Price</Text>
               <Text>
                 1 {currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol}
               </Text>
@@ -382,7 +380,7 @@ export default function RemoveLiquidity({
           </>
         )}
         <Button disabled={!(approval === ApprovalState.APPROVED || signatureData !== null)} onClick={onRemove}>
-          {TranslateString(1136, 'Confirm')}
+          Confirm
         </Button>
       </>
     )
@@ -453,7 +451,7 @@ export default function RemoveLiquidity({
             hash={txHash || ''}
             content={() => (
               <ConfirmationModalContent
-                title={TranslateString(1156, 'You will receive')}
+                title='You will receive'
                 onDismiss={handleDismissConfirmation}
                 topContent={modalHeader}
                 bottomContent={modalBottom}
@@ -472,7 +470,7 @@ export default function RemoveLiquidity({
                         setShowDetailed(!showDetailed)
                       }}
                     >
-                      {showDetailed ? TranslateString(1184, 'Simple') : TranslateString(1186, 'Detailed')}
+                      {showDetailed ? 'Simple' : 'Detailed'}
                     </ClickableText>
                   </RowBetween>
                   <Flex justifyContent="start">
@@ -510,7 +508,7 @@ export default function RemoveLiquidity({
                           scale="sm"
                           onClick={() => onUserInput(Field.LIQUIDITY_PERCENT, '100')}
                         >
-                          {TranslateString(166, 'Max')}
+                          Max
                         </Button>
                       </Flex>
                     </>
@@ -551,14 +549,14 @@ export default function RemoveLiquidity({
                               to={`/remove/${currencyA === ETHER ? WETH[chainId].address : currencyIdA}/${currencyB === ETHER ? WETH[chainId].address : currencyIdB
                                 }`}
                             >
-                              {TranslateString(1188, 'Receive WBNB')}
+                              Receive WBNB
                             </StyledInternalLink>
                           ) : oneCurrencyIsWETH ? (
                             <StyledInternalLink
                               to={`/remove/${currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'BNB' : currencyIdA
                                 }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'BNB' : currencyIdB}`}
                             >
-                              {TranslateString(1190, 'Receive BNB')}
+                              Receive BNB
                             </StyledInternalLink>
                           ) : null}
                         </RowBetween>

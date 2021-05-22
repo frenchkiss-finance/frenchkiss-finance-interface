@@ -1,17 +1,13 @@
 import React from 'react'
-import { Button, ButtonProps, useWalletModal} from '@frenchkiss-libs/uikit'
-import useI18n from 'hooks/useI18n'
+import { Button, ButtonProps, useWalletModal } from '@frenchkiss-libs/uikit'
 import useAuth from 'hooks/useAuth'
 
 const UnlockButton: React.FC<ButtonProps> = (props) => {
-  const TranslateString = useI18n()
   const { login, logout } = useAuth()
   const { onPresentConnectModal } = useWalletModal(login, logout)
 
   return (
-    <Button onClick={onPresentConnectModal} {...props}>
-      {TranslateString(292, 'Unlock Wallet')}
-    </Button>
+    <Button onClick={onPresentConnectModal} {...props}>Unlock Wallet</Button>
   )
 }
 
