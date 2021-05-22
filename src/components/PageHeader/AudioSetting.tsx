@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Text, FrenchkissToggle, useMatchBreakpoints } from '@frenchkiss-libs/uikit'
+import { Box, Flex, Text, FrenchKissToggle, useMatchBreakpoints } from '@frenchkiss-libs/uikit'
 import { useAudioModeManager } from 'state/user/hooks'
 
 type AudioSettingModalProps = {
@@ -16,7 +16,7 @@ const AudioSetting = ({ translateString }: AudioSettingModalProps) => {
         <Text bold>{translateString(999, 'Audio')}</Text>
       </Flex>
       <Box>
-        <FrenchkissToggle scale={isSm || isXs ? 'sm' : 'md'} checked={audioPlay} onChange={toggleSetAudioMode} />
+        <FrenchKissToggle scale={isSm || isXs ? 'sm' : 'md'} checked={audioPlay} onChange={toggleSetAudioMode} />
       </Box>
     </Box>
   )

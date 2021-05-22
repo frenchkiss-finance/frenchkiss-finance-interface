@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
-import { FrenchkissTheme } from '@frenchkiss-libs/uikit/dist/theme'
+import { FrenchKissTheme } from '@frenchkiss-libs/uikit/dist/theme'
 
 declare module 'styled-components' {
   /* eslint-disable @typescript-eslint/no-empty-interface */
-  export interface DefaultTheme extends FrenchkissTheme {}
+  export interface DefaultTheme extends FrenchKissTheme {}
 }

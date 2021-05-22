@@ -2559,10 +2559,10 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@frenchkiss-libs/uikit@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@frenchkiss-libs/uikit/-/uikit-0.0.8.tgz#1e6652ac69e4135a907aeba4024f0fec2634318c"
-  integrity sha512-P7aFKRZcSqyLE2t7CMcR0XxpM6uVLNyqrf5FTx0afwYMtLv9B1+QzqcH7SGRffNAS7bAWbJseII6247Q/56DAw==
+"@frenchkiss-libs/uikit@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@frenchkiss-libs/uikit/-/uikit-0.0.9.tgz#55e7a778d7a76f4ae5520db0545a5225031cfe16"
+  integrity sha512-Pbk2wf3Nvoxu7aO3OefOXcfSwXVIn8xT+kb1wrTX9DuW1qu3SovDajj3MkEg1/5wHPgZr3+9L105GQTRVDweAQ==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"
