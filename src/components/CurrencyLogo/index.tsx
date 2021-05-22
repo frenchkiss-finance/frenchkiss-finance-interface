@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import Logo from '../Logo'
-import CoinLogo from '../pancake/CoinLogo'
+import CoinLogo from '../frenchkiss/CoinLogo'
 
 const getTokenLogoURL = (address: string) =>
   `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/${address}/logo.png`
@@ -16,7 +16,7 @@ const StyledBnbLogo = styled.img<{ size: string }>`
   border-radius: 24px;
 `
 
-const StyledLogo = styled(Logo)<{ size: string }>`
+const StyledLogo = styled(Logo) <{ size: string }>`
   width: ${({ size }) => size};
   height: ${({ size }) => size};
 `

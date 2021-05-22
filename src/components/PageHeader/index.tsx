@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { Heading, IconButton, Text, Flex, useModal, TuneIcon, HistoryIcon } from '@frenchkiss-libs/uikit'
-import useI18n from 'hooks/useI18n'
 import SettingsModal from './SettingsModal'
 import RecentTransactionsModal from './RecentTransactionsModal'
 
@@ -21,9 +20,8 @@ const Details = styled.div`
 `
 
 const PageHeader = ({ title, description, children }: PageHeaderProps) => {
-  const TranslateString = useI18n()
-  const [onPresentSettings] = useModal(<SettingsModal translateString={TranslateString} />)
-  const [onPresentRecentTransactions] = useModal(<RecentTransactionsModal translateString={TranslateString} />)
+  const [onPresentSettings] = useModal(<SettingsModal />)
+  const [onPresentRecentTransactions] = useModal(<RecentTransactionsModal />)
 
   return (
     <StyledPageHeader>
@@ -36,13 +34,13 @@ const PageHeader = ({ title, description, children }: PageHeaderProps) => {
             </Text>
           )}
         </Details>
-        <IconButton variant="text" onClick={onPresentSettings} title={TranslateString(1200, 'Settings')}>
+        <IconButton variant="text" onClick={onPresentSettings} title='Settings'>
           <TuneIcon width="24px" color="currentColor" />
         </IconButton>
         <IconButton
           variant="text"
           onClick={onPresentRecentTransactions}
-          title={TranslateString(1202, 'Recent transactions')}
+          title='Recent transactions'
         >
           <HistoryIcon width="24px" color="currentColor" />
         </IconButton>

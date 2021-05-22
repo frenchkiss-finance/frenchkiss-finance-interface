@@ -20,7 +20,7 @@ const StyledWarningIcon = styled(AlertTriangle)`
   stroke: ${({ theme }) => theme.colors.failure};
 `
 
-export default function SyrupWarningModal({
+export default function GlossWarningModal({
   isOpen,
   transactionType,
   onConfirm,
@@ -39,17 +39,17 @@ export default function SyrupWarningModal({
         <AutoColumn gap="lg">
           <AutoRow gap="6px">
             <StyledWarningIcon />
-            <Text color="failure">Syrup Warning</Text>
+            <Text color="failure">Gloss Warning</Text>
           </AutoRow>
           {transactionType !== '' && (
             <>
               <Text color="failure">
-                Please be careful when <strong>{transactionType}</strong> SYRUP.
+                Please be careful when <strong>{transactionType}</strong> GLOSS.
               </Text>
               <Text color="failure">
                 {transactionType === 'Buying'
-                  ? 'You will not receive KISS rewards for holding purchased SYRUP.'
-                  : 'You will need to buy back the same amount of SYRUP to be able to convert back to KISS.'}
+                  ? 'You will not receive KISS rewards for holding purchased GLOSS.'
+                  : 'You will need to buy back the same amount of GLOSS to be able to convert back to KISS.'}
               </Text>
             </>
           )}

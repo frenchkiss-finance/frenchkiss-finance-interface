@@ -13,11 +13,7 @@ const Field = styled.div`
   }
 `
 
-type TransactionDeadlineSettingModalProps = {
-  translateString: (translationId: number, fallback: string) => string
-}
-
-const TransactionDeadlineSetting = ({ translateString }: TransactionDeadlineSettingModalProps) => {
+const TransactionDeadlineSetting = () => {
   const [deadline, setDeadline] = useUserDeadline()
   const [value, setValue] = useState(deadline / 60) // deadline in minutes
   const [error, setError] = useState<string | null>(null)
@@ -35,19 +31,19 @@ const TransactionDeadlineSetting = ({ translateString }: TransactionDeadlineSett
         setDeadline(rawValue)
         setError(null)
       } else {
-        setError(translateString(1150, 'Enter a valid deadline'))
+        setError('Enter a valid deadline')
       }
     } catch {
-      setError(translateString(1150, 'Enter a valid deadline'))
+      setError('Enter a valid deadline')
     }
-  }, [value, setError, setDeadline, translateString])
+  }, [value, setError, setDeadline])
 
   return (
     <Box mb="16px">
       <Flex alignItems="center" mb="8px">
-        <Text bold>{translateString(90, 'Transaction deadline')}</Text>
+        <Text bold>Transaction deadline</Text>
         <QuestionHelper
-          text={translateString(188, 'Your transaction will revert if it is pending for more than this long.')}
+          text='Your transaction will revert if it is pending for more than this long.'
         />
       </Flex>
       <Field>

@@ -36,11 +36,8 @@ const predefinedValues = [
   { label: '1%', value: 1 },
 ]
 
-type SlippageToleranceSettingsModalProps = {
-  translateString: (translationId: number, fallback: string) => string
-}
 
-const SlippageToleranceSettings = ({ translateString }: SlippageToleranceSettingsModalProps) => {
+const SlippageToleranceSettings = () => {
   const [userSlippageTolerance, setUserslippageTolerance] = useUserSlippageTolerance()
   const [value, setValue] = useState(userSlippageTolerance / 100)
   const [error, setError] = useState<string | null>(null)
@@ -57,21 +54,21 @@ const SlippageToleranceSettings = ({ translateString }: SlippageToleranceSetting
         setUserslippageTolerance(rawValue)
         setError(null)
       } else {
-        setError(translateString(1144, 'Enter a valid slippage percentage'))
+        setError('Enter a valid slippage percentage')
       }
     } catch {
-      setError(translateString(1144, 'Enter a valid slippage percentage'))
+      setError('Enter a valid slippage percentage')
     }
-  }, [value, setError, setUserslippageTolerance, translateString])
+  }, [value, setError, setUserslippageTolerance])
 
   // Notify user if slippage is risky
   useEffect(() => {
     if (userSlippageTolerance < RISKY_SLIPPAGE_LOW) {
-      setError(translateString(1146, 'Your transaction may fail'))
+      setError('Your transaction may fail')
     } else if (userSlippageTolerance > RISKY_SLIPPAGE_HIGH) {
-      setError(translateString(1148, 'Your transaction may be frontrun'))
+      setError('Your transaction may be frontrun')
     }
-  }, [userSlippageTolerance, setError, translateString])
+  }, [userSlippageTolerance, setError])
 
   return (
     <Box mb="16px">

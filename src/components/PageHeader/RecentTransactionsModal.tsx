@@ -8,7 +8,6 @@ import Loader from 'components/Loader'
 
 type RecentTransactionsModalProps = {
   onDismiss?: () => void
-  translateString: (translationId: number, fallback: string) => string
 }
 
 // TODO: Fix UI Kit typings
@@ -30,7 +29,7 @@ const getRowStatus = (sortedRecentTransaction: TransactionDetails) => {
   return { icon: <ErrorIcon color="failure" />, color: 'failure' }
 }
 
-const RecentTransactionsModal = ({ onDismiss = defaultOnDismiss, translateString }: RecentTransactionsModalProps) => {
+const RecentTransactionsModal = ({ onDismiss = defaultOnDismiss }: RecentTransactionsModalProps) => {
   const { account, chainId } = useActiveWeb3React()
   const allTransactions = useAllTransactions()
 
@@ -41,7 +40,7 @@ const RecentTransactionsModal = ({ onDismiss = defaultOnDismiss, translateString
   }, [allTransactions])
 
   return (
-    <Modal title={translateString(1202, 'Recent transactions')} onDismiss={onDismiss}>
+    <Modal title='Recent transactions' onDismiss={onDismiss}>
       {!account && (
         <Flex justifyContent="center" flexDirection="column" alignItems="center">
           <Text mb="8px" bold>

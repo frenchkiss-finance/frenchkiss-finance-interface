@@ -3,7 +3,6 @@ import React, { useMemo, useState } from 'react'
 import { Text, Button } from '@frenchkiss-libs/uikit'
 import { Repeat } from 'react-feather'
 
-import useI18n from 'hooks/useI18n'
 import { Field } from '../../state/swap/actions'
 import {
   computeSlippageAdjustedAmounts,
@@ -37,7 +36,6 @@ export default function SwapModalFooter({
   ])
   const { priceImpactWithoutFee, realizedLPFee } = useMemo(() => computeTradePriceBreakdown(trade), [trade])
   const severity = warningSeverity(priceImpactWithoutFee)
-  const TranslateString = useI18n()
 
   return (
     <>
@@ -66,14 +64,11 @@ export default function SwapModalFooter({
           <RowFixed>
             <Text fontSize="14px">
               {trade.tradeType === TradeType.EXACT_INPUT
-                ? TranslateString(1210, 'Minimum received')
-                : TranslateString(220, 'Maximum sold')}
+                ? 'Minimum received'
+                : 'Maximum sold'}
             </Text>
             <QuestionHelper
-              text={TranslateString(
-                202,
-                'Your transaction will revert if there is a large, unfavorable price movement before it is confirmed.'
-              )}
+              text='Your transaction will revert if there is a large, unfavorable price movement before it is confirmed.'
             />
           </RowFixed>
           <RowFixed>
@@ -91,21 +86,18 @@ export default function SwapModalFooter({
         </RowBetween>
         <RowBetween>
           <RowFixed>
-            <Text fontSize="14px">{TranslateString(226, 'Price Impact')}</Text>
+            <Text fontSize="14px">Price Impact</Text>
             <QuestionHelper
-              text={TranslateString(224, 'The difference between the market price and your price due to trade size.')}
+              text="The difference between the market price and your price due to trade size."
             />
           </RowFixed>
           <FormattedPriceImpact priceImpact={priceImpactWithoutFee} />
         </RowBetween>
         <RowBetween>
           <RowFixed>
-            <Text fontSize="14px">{TranslateString(228, 'Liquidity Provider Fee')}</Text>
+            <Text fontSize="14px">Liquidity Provider Fee</Text>
             <QuestionHelper
-              text={TranslateString(
-                999,
-                'For each trade a 0.2% fee is paid. 0.17% goes to liquidity providers and 0.03% goes to the FrenchKiss Finance treasury.'
-              )}
+              text='For each trade a 0.2% fee is paid. 0.17% goes to liquidity providers and 0.03% goes to the FrenchKiss Finance treasury.'
             />
           </RowFixed>
           <Text fontSize="14px">
