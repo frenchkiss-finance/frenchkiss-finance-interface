@@ -1,12 +1,12 @@
 describe.only('Add Liquidity', () => {
   it('loads the two correct tokens', () => {
-    cy.visit('/add/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82/0xe9e7cea3dedca5984780bafc599bd69add087d56')
+    cy.visit('/add/0x3b44b0cfe3a290906f3c6479df56457db9d7cd59/0xe9e7cea3dedca5984780bafc599bd69add087d56')
     cy.get('#add-liquidity-input-tokena #pair').should('contain.text', 'KISS')
     cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'BUSD')
   })
 
   it('does not crash if KISS is duplicated', () => {
-    cy.visit('/add/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82')
+    cy.visit('/add/0x3b44b0cfe3a290906f3c6479df56457db9d7cd59/0x3b44b0cfe3a290906f3c6479df56457db9d7cd59')
     cy.get('#add-liquidity-input-tokena #pair').should('contain.text', 'KISS')
     cy.get('#add-liquidity-input-tokenb #pair').should('not.contain.text', 'KISS')
   })

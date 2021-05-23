@@ -1,7 +1,6 @@
 import React from 'react'
 import { Menu as UikitMenu } from '@frenchkiss-libs/uikit'
 import { useWeb3React } from '@web3-react/core'
-import { allLanguages } from 'constants/localisation/languageCodes'
 import useTheme from 'hooks/useTheme'
 import useGetPriceData from 'hooks/useGetPriceData'
 import useAuth from 'hooks/useAuth'
@@ -24,11 +23,7 @@ const Menu: React.FC = (props) => {
       logout={logout}
       isDark={isDark}
       toggleTheme={toggleTheme}
-      currentLang=''
-      langs={allLanguages}
-      setLang={() => {
-        // .log();
-      }}
+      currentLang="EN"
       kissPriceUsd={kissPriceUsd}
       {...props}
     />

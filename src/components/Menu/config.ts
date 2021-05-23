@@ -32,40 +32,36 @@ const config: MenuEntry[] = [
     href: 'https://frenchkiss.finance/pools',
   },
   {
+    label: 'NFT Marketplace',
+    icon: 'NftIcon',
+    href: 'https://nft.frenchkiss.finance',
+  },
+  {
     label: 'Info',
     icon: 'InfoIcon',
-    href: '/',
-    status: {
-      text: 'SOON',
-      color: 'warning',
-    },
-    // items: [
-    //   {
-    //     label: 'Overview',
-    //     href: 'https://info.frenchkiss.finance',
-    //   },
-    //   {
-    //     label: 'Tokens',
-    //     href: 'https://info.frenchkiss.finance/tokens',
-    //   },
-    //   {
-    //     label: 'Pairs',
-    //     href: 'https://info.frenchkiss.finance/pairs',
-    //   },
-    //   {
-    //     label: 'Accounts',
-    //     href: 'https://info.frenchkiss.finance/accounts',
-    //   },
-    // ],
+    items: [
+      {
+        label: 'Overview',
+        href: 'https://info.frenchkiss.finance',
+      },
+      {
+        label: 'Tokens',
+        href: 'https://info.frenchkiss.finance/tokens',
+      },
+      {
+        label: 'Pairs',
+        href: 'https://info.frenchkiss.finance/pairs',
+      },
+      {
+        label: 'Accounts',
+        href: 'https://info.frenchkiss.finance/accounts',
+      },
+    ],
   },
   {
     label: 'More',
     icon: 'MoreIcon',
     items: [
-      {
-        label: 'Contact',
-        href: 'https://docs.frenchkiss.finance/contact-us',
-      },
       {
         label: 'Voting',
         // href: 'https://voting.pancakeswap.finance',
@@ -80,12 +76,20 @@ const config: MenuEntry[] = [
         href: 'https://github.com/frenchkiss-finance',
       },
       {
+        label: 'Whitepaper',
+        href: '#/',
+      },
+      {
         label: 'Docs',
         href: 'https://docs.frenchkiss.finance',
       },
       {
-        label: 'Blog',
-        href: 'https://frenchkiss-finance.medium.com',
+        label: 'Medium',
+        href: 'https://medium.com/@frenchkiss.finance',
+      },
+      {
+        label: 'Support',
+        href: 'https://docs.frenchkiss.finance/contact-us',
       },
     ],
   },
