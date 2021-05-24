@@ -2529,21 +2529,21 @@
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^4.0.0"
 
-"@frenchkiss-libs/frenchkiss-finance-core@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@frenchkiss-libs/frenchkiss-finance-core/-/frenchkiss-finance-core-1.0.0.tgz#eef757f59b5153101b3adc1aca4ed6e8968026f1"
-  integrity sha512-Rt3k5LXZNcfZuKM/Srw7wnXNHfCg3/au3/yKCiRg+hFGLTcXwRG63byVkqgt9XEnl/SD6+FW1ej5KD10FIIzcQ==
+"@frenchkiss-libs/frenchkiss-finance-core@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@frenchkiss-libs/frenchkiss-finance-core/-/frenchkiss-finance-core-1.0.1.tgz#6febf41e4958d607dbcacb970b032f95e11d3593"
+  integrity sha512-gR+Pz05KS2HV2eMKchByDmIaH+B/yzLRLF7cwf/ZHcFQENUJzi6eQfCACOKniqXG4X8g9ElK/mRR8ugytgTk0Q==
   dependencies:
     truffle "^5.1.41"
     truffle-flattener "^1.4.4"
     truffle-hdwallet-provider "^1.0.17"
 
-"@frenchkiss-libs/sdk@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@frenchkiss-libs/sdk/-/sdk-1.0.5.tgz#229ddc225546da5d4476eb5882b8c4cbf37705fb"
-  integrity sha512-2vndlEUrk43ySpAapm+zElnfdCGnPWiU1TFTh35DybFRUp6O8PtsBJgGrDv710d3H6TbiIModnRhvr1A5udRRA==
+"@frenchkiss-libs/sdk@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@frenchkiss-libs/sdk/-/sdk-1.1.0.tgz#9057dc1bd8cc037cdb5b08b3286bc98303d1f538"
+  integrity sha512-gAi/e9iQVp0UfXUzCu4LBazMBVyYEXnuK0X01ZRbKXhbX90Yk1wsezdIhLtQRQt9VtduW+jWe7oCxzex0wGF9Q==
   dependencies:
-    "@frenchkiss-libs/frenchkiss-finance-core" "^1.0.0"
+    "@frenchkiss-libs/frenchkiss-finance-core" "^1.0.1"
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"
     decimal.js-light "^2.5.0"
