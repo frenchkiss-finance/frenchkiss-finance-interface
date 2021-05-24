@@ -77,7 +77,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Whitepaper',
-        href: '#/',
+        href: 'https://frenchkiss.finance/docs/whitepaper.pdf',
       },
       {
         label: 'Docs',
