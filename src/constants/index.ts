@@ -1,10 +1,10 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@frenchkiss-libs/sdk'
 
-// @frenchkiss-libs/sdk v^1.0.4
-export const ROUTER_ADDRESS_TESTNET = '0x221c18984120e95f8d887c53F8b8aa066BE05c94'
+// @frenchkiss-libs/sdk v^1.0.6
+export const ROUTER_ADDRESS_TESTNET = '0x0e225751aBCA3a5706d07fC5Ad0A0238F1d8D460'
 
-// @frnchkisslibs/sdk v>1.0.5
-export const ROUTER_ADDRESS_MAINNET = '0x17760209bafeaDBc12C44DB421Ce611FD43B9Ed0' 
+// @frnchkisslibs/sdk v>=1.1.0
+export const ROUTER_ADDRESS_MAINNET = '0x0c4b009cbd5757a537091716e3dbaf39fe1b928f' 
 
 export const ROUTER_ADDRESS = process.env.REACT_APP_CHAIN_ID === "97" ? ROUTER_ADDRESS_TESTNET : ROUTER_ADDRESS_MAINNET 
 
