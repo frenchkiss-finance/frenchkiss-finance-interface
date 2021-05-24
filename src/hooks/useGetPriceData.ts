@@ -12,8 +12,9 @@ type ApiResponse = {
   }
 }
 
-const api = 'https://api.pancakeswap.info/api/tokens'
+const api = 'https://api.frenchkiss.info/api/tokens'
 
+// Function is deprecated, now using useGetKissBusdLpPrice in util folder (price is now generated from Liquidity)
 const useGetPriceData = () => {
   const [data, setData] = useState<ApiResponse | null>(null)
 
