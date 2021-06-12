@@ -39,6 +39,12 @@ const config: MenuEntry[] = [
   {
     label: 'Info',
     icon: 'InfoIcon',
+    href: '/',
+    status: {
+      text: 'SOON',
+      color: 'warning',
+    },
+  /*
     items: [
       {
         label: 'Overview',
@@ -57,6 +63,7 @@ const config: MenuEntry[] = [
         href: 'https://info.frenchkiss.finance/accounts',
       },
     ],
+  */
   },
   {
     label: 'More',
@@ -64,7 +71,7 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Voting',
-        // href: 'https://voting.pancakeswap.finance',
+        // href: 'https://voting.frenchkisss.finance',
         href: '/',
         status: {
           text: 'SOON',
@@ -81,7 +88,12 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Docs',
-        href: 'https://docs.frenchkiss.finance',
+        // href: 'https://docs.frenchkiss.finance',
+        href: '/',
+        status: {
+          text: 'SOON',
+          color: 'warning',
+        },
       },
       {
         label: 'Medium',
@@ -89,7 +101,12 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Support',
-        href: 'https://docs.frenchkiss.finance/contact-us',
+        // href: 'https://docs.frenchkiss.finance/contact-us',
+        href: '/',
+        status: {
+          text: 'SOON',
+          color: 'warning',
+        },
       },
     ],
   },
